@@ -2,4 +2,6 @@
 
 A compliation of data structure algorithims I have made and tested for efficiancy.
 
-Currently includes an insertion sort algorithim for arrays.
+Currently includes an insertion and quick sort alogrithims for arrays. Quick sort
+accomplished with a bit of help from stack overflow.
+
