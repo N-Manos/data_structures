@@ -8,45 +8,47 @@ class RadixSort
       digits_to_array(num)
     end
 
+    set_number_of_repititions
+
+    fill_bucket
+    #puts @bucket.to_s
+
+    @highest_number_of_digits.times do |digit|
+
+    #   @sort_array.each do |number_as_array|
+
+
+    #     number_as_array[digit] == nil ? @bucket_index = 0 :
+    #                                     @bucket_index = number_as_array[digit]
+
+    #     next if @bucket_index == nil
+    #     @bucket[@bucket_index].push(number_as_array)
+
+    #   end
+     end
+    # @bucket.each { |e| e.each {|i| i.reverse!.join.to_i}}
+    # @bucket.to_s
+  end
+
+  def set_number_of_repititions
     @sort_array.each do |times|
       # puts @sort_array.to_s
       # puts times
       length = times.length
       @highest_number_of_digits = length if length > @highest_number_of_digits
     end
+    @highest_number_of_digits -=1
+  end
 
-    #@highest_number_of_digits -= 1
-    #puts @highest_number_of_digits
-    #puts @sort_array.to_s
-    @highest_number_of_digits.times do |digit|
-      #puts digit
-      @sort_array.each do |number_as_array|
-
-        #puts number_as_array[digit]
-        #@bucket_index = number_as_array[digit]
-        number_as_array[digit] == nil ? @bucket_index = 0 :
-                                        @bucket_index = number_as_array[digit]
-
-        #puts @bucket[bucket_index].to_s
+  def fill_bucket
+    @sort_array.each do |number_as_array|
+        number_as_array[0] == nil ? @bucket_index = 0 :
+                                    @bucket_index = number_as_array[0]
         next if @bucket_index == nil
         @bucket[@bucket_index].push(number_as_array)
-        #puts number_as_array.to_s
-        #puts @bucket.to_s
-
-      end
-      @bucket = @loop_bucket
-    end
-    @bucket.each { |e| e.each {|i| i.reverse!.join.to_i}}
-    @bucket.to_s
-  end
-
-  def destribute (array)
-    array.each_index do |i|
-      array[i].each do |j]|
-        @bucket = j
-      end
     end
   end
+
   #converts the numbers to be sorted into arrays with the digits reversed
   def digits_to_array(d)
     digits = []
@@ -63,4 +65,4 @@ end
 array = (1..15).to_a.shuffle
 sort = RadixSort.new
 
-puts sort.rsort(array)
+#puts sort.rsort(array)
