@@ -27,7 +27,7 @@ end
 
 # Testing it out
 
-sort = QuickSort.new
-arr = (1..10000).to_a.shuffle
-sort.qsort(arr, 0, arr.length-1)
-puts arr.to_s
+# sort = QuickSort.new
+# arr = (1..10000).to_a.shuffle
+# sort.qsort(arr, 0, arr.length-1)
+# puts arr.to_s
