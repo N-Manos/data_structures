@@ -1,4 +1,5 @@
-class MergeSort
+class Array
+
   def msort
     if size <= 1
       self
@@ -24,4 +25,5 @@ class MergeSort
     end
     result.concat(self).concat(arr)
   end
+
 end
