@@ -1,18 +1,27 @@
-# class MergeSort
-#   def msort(list)
-#     list.map! { |e| [e] }
+class MergeSort
+  def msort
+    if size <= 1
+      self
+    else
+      left, right = (self / 2).map(&:sort)
+      left.merge right
+    end
+  end
 
-#     while list.size > 1
-#       list = list.each_slice(2) { |l,r| merge(l,r) }
-#     end
-#   end
+  def / int
+    middle = size / int
+    [self[0...middle], self[middle..-1]]
+  end
 
-#   def merge(left, right)
-#     result = []
-#     while left.first && right.first
-#       result.push left.first <= right.first ? left.shift
-#     end
-#     result = left + right
-#   end
-
-# end
+  def merge arr
+    result = []
+    while any? && arr.any?
+      if first <= arr.first
+        result << shift
+      else
+        result << arr.shift
+      end
+    end
+    result.concat(self).concat(arr)
+  end
+end
