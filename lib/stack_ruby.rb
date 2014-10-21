@@ -4,8 +4,6 @@ class Stack
   def push (data)
     $list[$counter] = data
     $counter+=1
-    puts $counter
-    puts $list
   end
 
   def pop
@@ -13,14 +11,13 @@ class Stack
     $list.delete($counter -1)
     $counter -=1
     return value
-    puts $counter
   end
 end
 
-# stack = Stack.new
-# stack.push(1)
-# stack.push(2)
-# stack.push(3)
-# puts stack.pop
-# puts stack.pop
-# puts stack.pop
+stack = Stack.new
+stack.push(1)
+stack.push(2)
+stack.push(3)
+puts stack.pop
+puts stack.pop
+puts stack.pop
