@@ -1,27 +1,26 @@
 class QuickSort
 
 
-def qsort(array, left, right)
-    if left < right then
-        q = partition(array, left, right)
-        qsort(array, left, q-1)
-        qsort(array, q+1, right)
-    end
-end
-
-def partition(array, left, right)
-    pivot = array[right]
-    i = left - 1
-    left.upto(right-1) do |k|
-        if array[k] <= pivot
-            i = i+1
-            array[i], array[k] = array[k],array[i]
+    def qsort(array, left, right)
+        if left < right then
+            q = partition(array, left, right)
+            qsort(array, left, q-1)
+            qsort(array, q+1, right)
         end
     end
-    array[i+1],array[right] = array[right],array[i+1]
-    return i + 1
-end
 
+    def partition(array, left, right)
+        pivot = array[right]
+        i = left - 1
+        left.upto(right-1) do |k|
+            if array[k] <= pivot
+                i = i+1
+                array[i], array[k] = array[k],array[i]
+            end
+        end
+        array[i+1],array[right] = array[right],array[i+1]
+        return i + 1
+    end
 
 end
 
