@@ -1,9 +1,8 @@
 class LinkedList
+  attr_accessor :tail
 
   @head = nil
   @tail = nil
-
-  attr_accessor :tail
 
   def insert(data)
     node = Node.new(data)
@@ -74,14 +73,13 @@ class LinkedList
   end
 
   class Node
+    attr_accessor :next, :data
 
     def initialize(data)
       @data = data
       @next = 0
     end
 
-    attr_accessor :next
-    attr_accessor :data
   end
 
 end
