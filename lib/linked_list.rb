@@ -64,6 +64,7 @@ class LinkedList
   def to_s
     @node = @head
     @list = ''
+    return 'The list is empty' if @head == nil
     while @node.next != nil do
       @list = @list + "#{@node.data}, "
       @node = @node.next

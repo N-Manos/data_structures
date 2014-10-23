@@ -2,19 +2,21 @@ require_relative "./linked_list.rb"
 
 class Queue
 
-  $list = LinkedList.new
+  def initialize
+  @list = LinkedList.new
+  end
 
   def enqueue(data)
-    $list.insert(data)
+    @list.insert(data)
   end
 
   def dequeue
-   return 'The queue is empty, dequeue failed.' if $list.size == 0
-   return $list.remove($list.tail.data).data
+   return 'The queue is empty, dequeue failed.' if @list.size == 0
+   return @list.remove(@list.tail.data).data
   end
 
   def size
-    return $list.size
+    return @list.size
   end
 
 end
