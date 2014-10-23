@@ -12,10 +12,10 @@ class InsertionSort
   end
 end
 
-sort = InsertionSort.new
+# sort = InsertionSort.new
 
-test_array = [15, 2, 7, 3, 8, 14, 1, 6, 12, 9, 5, 11, 4, 10, 13]
+# test_array = [15, 2, 7, 3, 8, 14, 1, 6, 12, 9, 5, 11, 4, 10, 13]
 
-sort.isort(test_array)
+# sort.isort(test_array)
 
-puts test_array
+# puts test_array

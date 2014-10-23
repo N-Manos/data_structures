@@ -14,10 +14,10 @@ class Stack
   end
 end
 
-stack = Stack.new
-stack.push(1)
-stack.push(2)
-stack.push(3)
-puts stack.pop
-puts stack.pop
-puts stack.pop
+# stack = Stack.new
+# stack.push(1)
+# stack.push(2)
+# stack.push(3)
+# puts stack.pop
+# puts stack.pop
+# puts stack.pop
