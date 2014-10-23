@@ -1,11 +1,15 @@
 class LinkedList
 
   @head = nil
+  @tail = nil
+
+  attr_accessor :tail
 
   def insert(data)
     node = Node.new(data)
     node.next = @head
     @head = node
+    @tail = node if @tail == nil
   end
 
   def search(val)
@@ -32,25 +36,30 @@ class LinkedList
 
   def remove(node)
     node = self.search(node)
+
     if node == @head
       @head = node.next
       node.next = nil
-      return ''
+      return node
     end
+
     @prev = nil
     @current = @head
+
     while @current != nil do
       if @current.data == node.data
         @prev.next = @current.next
         @current.next = nil
-        return ''
+          if @current == @tail
+            @tail = @prev
+          end
+        return node
       else
         @prev = @current
         @current = @current.next
       end
 
     end
-
   end
 
   def to_s

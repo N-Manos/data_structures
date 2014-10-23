@@ -1,6 +1,5 @@
 require 'minitest'
 require 'minitest/autorun'
-
 require 'linked_list.rb'
 
 
