@@ -1,3 +1,4 @@
+# A Linked list and node clss
 class LinkedList
   attr_accessor :tail
 
@@ -8,81 +9,77 @@ class LinkedList
     node = Node.new(data)
     node.next = @head
     @head = node
-    @tail = node if @tail == nil
+    @tail = node if @tail.nil?
   end
 
   def search(val)
     @counter = @head
-    while @counter.next != 0 do
+    while @counter.next != 0
       return @counter if @counter.data == val
-      return "#{val} was not found in the list" if @counter.next == nil
+      return "#{val} was not found in the list" if @counter.next.nil?
       @counter = @counter.next
     end
-
   end
 
   def size
-    return 0 if @head == nil
+    return 0 if @head.nil?
     @node = @head
     size = 0
-    while @node.next != 0 do
-      return size + 1 if @node.next == nil
+    while @node.next != 0
+      return size + 1 if @node.next.nil?
       @node = @node.next
       size += 1
     end
-    return size
+    size
   end
 
   def remove(node)
-    node = self.search(node)
-
+    node = search(node)
     if node == @head
       @head = node.next
       node.next = nil
       return node
     end
-
     @prev = nil
     @current = @head
+    removal_search(@prev, @current, node)
+  end
 
-    while @current != nil do
-      if @current.data == node.data
-        @prev.next = @current.next
-        @current.next = nil
-          if @current == @tail
-            @tail = @prev
-          end
+  def removal_search(prev, current, node)
+    until current.nil?
+      if current.data == node.data
+        prev.next = current.next
+        current.next = nil
+        @tail = @prev if current == @tail
         return node
       else
-        @prev = @current
-        @current = @current.next
+        prev = current
+        current = current.next
       end
-
     end
   end
 
   def to_s
     @node = @head
     @list = ''
-    return 'The list is empty' if @head == nil
-    while @node.next != nil do
-      @list = @list + "#{@node.data}, "
+    return 'The list is empty' if @head.nil?
+    until @node.next.nil?
+      @list += "#{@node.data}, "
       @node = @node.next
     end
-    @list = @list + "#{@node.data}"
-    return @list
+    @list += "#{@node.data}"
+    @list
   end
+end
 
-  class Node
-    attr_accessor :next, :data
+# Node class for use in the linked list above
+class Node
+  attr_accessor :next, :data
 
-    def initialize(data)
-      @data = data
-      @next = 0
-    end
-
+  def initialize(data)
+    @data = data
+    @next = 0
   end
-
 end
 
 # list = LinkedList.new
@@ -116,5 +113,3 @@ end
 # puts list.search(3).data
 # puts list.search('four').data
 # puts list.search(5)
-
-

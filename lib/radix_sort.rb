@@ -1,17 +1,16 @@
+# Radix sort algorithim
 class RadixSort
-
   def rsort(array)
     length = array.max.to_s.length
-
     length.times do |i|
-      bucket = Hash.new {|h,k| h[k] = []}
+      bucket = Hash.new { |h, k| h[k] = [] }
       array.each do |g|
-        digit = (g/10**i) % 10
+        digit = (g / 10**i) % 10
         bucket[digit] << g
       end
       array = bucket.values_at(*(0..10)).compact.flatten
     end
-    return array
+    array
   end
 end
 

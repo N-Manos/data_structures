@@ -1,5 +1,5 @@
+# Merge sort algorithim that extends the Array class
 class Array
-
   def msort
     if size <= 1
       self
@@ -9,12 +9,12 @@ class Array
     end
   end
 
-  def / int
-    middle = size / int
+  def /(other)
+    middle = size / other
     [self[0...middle], self[middle..-1]]
   end
 
-  def merge arr
+  def merge(arr)
     result = []
     while any? && arr.any?
       if first <= arr.first
@@ -25,5 +25,4 @@ class Array
     end
     result.concat(self).concat(arr)
   end
-
 end

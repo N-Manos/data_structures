@@ -1,9 +1,9 @@
-require_relative "./linked_list.rb"
+require_relative './linked_list.rb'
 
+# Queue backed by a linked list.
 class Queue
-
   def initialize
-  @list = LinkedList.new
+    @list = LinkedList.new
   end
 
   def enqueue(data)
@@ -11,14 +11,13 @@ class Queue
   end
 
   def dequeue
-   return 'The queue is empty, dequeue failed.' if @list.size == 0
-   return @list.remove(@list.tail.data).data
+    return 'The queue is empty, dequeue failed.' if @list.size == 0
+    @list.remove(@list.tail.data).data
   end
 
   def size
-    return @list.size
+    @list.size
   end
-
 end
 
 queue = Queue.new
