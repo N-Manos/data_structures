@@ -21,20 +21,15 @@ class Queue
 end
 
 queue = Queue.new
-queue.enqueue(5)
-queue.enqueue(4)
-queue.enqueue(3)
-queue.enqueue(2)
-queue.enqueue(1)
-puts queue.size
-puts queue.dequeue
-puts queue.size
-puts queue.dequeue
-puts queue.size
-puts queue.dequeue
-puts queue.size
-puts queue.dequeue
-puts queue.size
-puts queue.dequeue
-puts queue.dequeue
-puts queue.dequeue
+# queue.enqueue(5)
+# queue.enqueue(4)
+# queue.enqueue(3)
+# queue.enqueue(2)
+# queue.enqueue(1)
+# puts queue.dequeue
+# puts queue.dequeue
+# puts queue.dequeue
+# puts queue.dequeue
+# puts queue.dequeue
+# puts queue.dequeue
+# puts queue.dequeue

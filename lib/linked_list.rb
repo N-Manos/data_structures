@@ -33,8 +33,8 @@ class LinkedList
     size
   end
 
-  def remove(node)
-    node = search(node)
+  def remove(data)
+    node = search(data)
     if node == @head
       @head = node.next
       node.next = nil
@@ -50,7 +50,7 @@ class LinkedList
       if current.data == node.data
         prev.next = current.next
         current.next = nil
-        @tail = @prev if current == @tail
+        @tail = prev if current == @tail
         return node
       else
         prev = current
@@ -80,6 +80,15 @@ class Node
     @data = data
     @next = 0
   end
+end
+
+# Key-Value Node for use with the hash table
+class KeyValueNode < Node
+  def initialize(key, value)
+    @key = key
+    @value = value
+  end
+  attr_accessor :value, :key
 end
 
 # list = LinkedList.new
